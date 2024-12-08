@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .product-details {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding: 50px;
+            box-sizing: border-box;
+            width: 100vw;
+            height: 100vh;
+        }
+        
+        .product-details img {
+            width: 500px;
+            /* Increase image size */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        
+        .product-info {
+            max-width: 600px;
+            /* Adjust max width for larger content */
+        }
+        
+        .product-info h1 {
+            font-size: 48px;
+            /* Larger heading */
+        }
+        
+        .product-info p {
+            font-size: 20px;
+            /* Larger description */
+            margin: 20px 0;
+        }
+        
+        .price {
+            font-size: 28px;
+            /* Larger price */
+            margin: 20px 0;
+        }
+        
+        .total-price {
+            font-size: 28px;
+            /* Larger total price */
+            margin: 20px 0;
+            font-weight: bold;
+            /* Make the total price bold */
+        }
+        
+        label {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        
+        input[type="number"] {
+            padding: 10px;
+            font-size: 20px;
+            width: 100px;
+            margin-top: 10px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 24px;
+            /* Larger button */
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        
+        .btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="product-details">
+        <img src="image/product-1.png" alt="Fresh Orange">
+        <div class="product-info">
+            <h1>Fresh Orange</h1>
+            <p>Description: Fresh, juicy oranges. Perfect for a healthy snack.</p>
+            <div class="price">Price: $12.99/-</div>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1" max="10">
+            <div class="total-price">Total Price: $12.99</div>
+            <button id="buyNow" class="btn">Buy Now</button>
+        </div>
+    </div>
+
+    <script>
+        const quantityInput = document.getElementById('quantity');
+        const totalPriceElement = document.querySelector('.total-price');
+        const price = 12.99; // Base price
+
+        // Update total price based on quantity
+        quantityInput.addEventListener('input', function() {
+            const quantity = quantityInput.value;
+            const totalPrice = price * quantity;
+            totalPriceElement.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+        });
+
+        // Handle Buy Now button click
+        document.getElementById('buyNow').addEventListener('click', function() {
+            window.location.href = "order-confirmation.html";
+        });
+    </script>
+</body>
+
+</html>

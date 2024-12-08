@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+        }
+        
+        .order-confirmation {
+            background-color: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        .order-confirmation h1 {
+            font-size: 48px;
+            color: #28a745;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+            /* Bounce animation for confirmation text */
+        }
+        
+        .order-confirmation p {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        /* Fade-in animation */
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        /* Bounce animation for the confirmation text */
+        
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="order-confirmation">
+        <h1>Your order is confirmed!</h1>
+        <p>Thank you for purchasing Fresh Oranges.</p>
+        <p>You will receive an email confirmation shortly.</p>
+    </div>
+</body>
+
+</html>
